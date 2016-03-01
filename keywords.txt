@@ -1,0 +1,33 @@
+#######################################
+# Syntax Colouring Map duinotech595
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+setPins		KEYWORD2
+updateShiftRegister	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+LED_PAIR_1_GREEN
+LED_PAIR_1_RED
+LED_PAIR_1_BLUE
+LED_PAIR_2_GREEN
+LED_PAIR_2_RED
+LED_PAIR_2_BLUE
+LED_PAIR_1_WHITE
+LED_PAIR_2_WHITE
+LED_ALL_GREEN
+LED_ALL_RED
+LED_ALL_BLUE
+LED_ALL_WHITE
