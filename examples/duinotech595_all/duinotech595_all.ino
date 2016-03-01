@@ -8,8 +8,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  for (int i = 0; i < 256; i++) {
-    updateShiftRegister(i);
+  for (int i = 0; i < sizeof(allArray); i++) {
+    updateShiftRegister(allArray[i]);
     delay(1000);
   }
 }
