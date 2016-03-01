@@ -9,6 +9,12 @@
 #endif
 
 
+// do not set as const to allow reconfiguration
+int LATCH_PIN = 6;
+int CLOCK_PIN = 5;
+int DATA_PIN  = 4;
+
+
 const byte LED_PAIR_1_GREEN = 0b00000010;
 const byte LED_PAIR_1_RED   = 0b00000100;
 const byte LED_PAIR_1_BLUE  = 0b00001000;
@@ -38,7 +44,9 @@ byte allArray[]  = {LED_ALL_GREEN,
                     LED_ALL_WHITE,
                    };
 
+
 void setPins();
 void updateShiftRegister(byte byteToSet);
+
 
 #endif  /* __DUINOTECH595_H__ */

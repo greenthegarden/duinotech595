@@ -1,13 +1,9 @@
 #include <duinotech595.h>
 
-const int LATCH_PIN = 6;
-const int CLOCK_PIN = 5;
-const int DATA_PIN  = 4;
-
 
 void setup() {
   // put your setup code here, to run once:
-  pinSetup();
+  setPins();
 }
 
 void loop() {
