@@ -1,8 +1,6 @@
-Library to support the duinotech 595 which is a module containing 4 5050 LEDs controlled by a 74HC595 shift register.
+# duinotech 595 Library
 
-For further details see
-
-http://www.jaycar.com.au/Kits%2C-Science-%26-Learning/Science-Lab-Equipment/Instruments/Arduino-Compatible-4-x-5050-RGB-LED-Module/p/XC4466
+Library to support the [duinotech 595](http://www.jaycar.com.au/Kits%2C-Science-%26-Learning/Science-Lab-Equipment/Instruments/Arduino-Compatible-4-x-5050-RGB-LED-Module/p/XC4466) which is a module containing 4 [5050 LED](https://en.wikipedia.org/wiki/SMD_LED_Module)s controlled by a [74HC595 shift register](https://www.nxp.com/documents/data_sheet/74HC_HCT595.pdf). The library is based on the example at https://www.arduino.cc/en/Tutorial/ShftOut13.
 
 The tri-colour 5050 LEDs on the module are connected to the 74HC595 shift register in two pairs. The library defines the byte codes for each LED colour for each pair as:
 
