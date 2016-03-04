@@ -1,11 +1,11 @@
 #include <duinotech595.h>
 
 
-Duinotech595 duinotech595(6, 5, 4);
-
 const byte LATCH_PIN = 6;
 const byte CLOCK_PIN = 5;
 const byte DATA_PIN  = 4;
+
+Duinotech595 duinotech595(LATCH_PIN, DATA_PIN, CLOCK_PIN);
 
 
 void setup() {
