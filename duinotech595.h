@@ -18,13 +18,28 @@ const byte LED_PAIR_2_GREEN = 0b00010000;
 const byte LED_PAIR_2_RED   = 0b00100000;
 const byte LED_PAIR_2_BLUE  = 0b01000000;
 
+const byte LED_PAIR_1_GREENRED = LED_PAIR_1_GREEN + LED_PAIR_1_RED;
+const byte LED_PAIR_2_GREENRED = LED_PAIR_2_GREEN + LED_PAIR_2_RED;
+
+const byte LED_PAIR_1_REDBLUE = LED_PAIR_1_RED + LED_PAIR_1_BLUE;
+const byte LED_PAIR_2_REDBLUE = LED_PAIR_2_RED + LED_PAIR_2_BLUE;
+
+const byte LED_PAIR_1_GREENBLUE = LED_PAIR_1_GREEN + LED_PAIR_1_BLUE;
+const byte LED_PAIR_2_GREENBLUE = LED_PAIR_2_GREEN + LED_PAIR_2_BLUE;
+
 const byte LED_PAIR_1_WHITE = LED_PAIR_1_GREEN + LED_PAIR_1_RED + LED_PAIR_1_BLUE;
 const byte LED_PAIR_2_WHITE = LED_PAIR_2_GREEN + LED_PAIR_2_RED + LED_PAIR_2_BLUE;
 
 const byte LED_ALL_OFF      = LED_PAIR_1_OFF   + LED_PAIR_2_OFF;
+
 const byte LED_ALL_GREEN    = LED_PAIR_1_GREEN + LED_PAIR_2_GREEN;
 const byte LED_ALL_RED      = LED_PAIR_1_RED   + LED_PAIR_2_RED;
 const byte LED_ALL_BLUE     = LED_PAIR_1_BLUE  + LED_PAIR_2_BLUE;
+
+const byte LED_ALL_GREENRED = LED_PAIR_1_GREENRED + LED_PAIR_2_GREENRED;
+const byte LED_ALL_REDBLUE = LED_PAIR_1_REDBLUE + LED_PAIR_2_REDBLUE;
+const byte LED_ALL_GREENBLUE = LED_PAIR_1_GREENBLUE + LED_PAIR_2_GREENBLUE;
+
 const byte LED_ALL_WHITE    = LED_PAIR_1_WHITE + LED_PAIR_2_WHITE;
 
 
@@ -44,6 +59,9 @@ public:
   void green();
   void red();
   void blue();
+  void greenred();
+  void redblue();
+  void greenblue();
   void white();
   void on();
 };

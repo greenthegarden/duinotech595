@@ -44,6 +44,18 @@ void Duinotech595::blue() {
   this->updateShiftRegister(LED_ALL_BLUE);
 }
 
+void Duinotech595::greenred() {
+  this->updateShiftRegister(LED_ALL_GREENRED);
+}
+
+void Duinotech595::redblue() {
+  this->updateShiftRegister(LED_ALL_REDBLUE);
+}
+
+void Duinotech595::greenblue() {
+  this->updateShiftRegister(LED_ALL_GREENBLUE);
+}
+
 void Duinotech595::white() {
   this->updateShiftRegister(LED_ALL_WHITE);
 }
