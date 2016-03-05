@@ -10,6 +10,9 @@ Duinotech595 duinotech595(LATCH_PIN, DATA_PIN, CLOCK_PIN);
 byte allArray[]  = {LED_ALL_GREEN,
                     LED_ALL_RED,
                     LED_ALL_BLUE,
+                    LED_ALL_GREENRED,
+                    LED_ALL_REDBLUE,
+                    LED_ALL_GREENBLUE,
                     LED_ALL_WHITE,
                    };
 
