@@ -42,6 +42,14 @@ const byte LED_ALL_GREENBLUE = LED_PAIR_1_GREENBLUE + LED_PAIR_2_GREENBLUE;
 
 const byte LED_ALL_WHITE    = LED_PAIR_1_WHITE + LED_PAIR_2_WHITE;
 
+const byte sequenceArray[]  = {LED_ALL_GREEN,
+                               LED_ALL_GREENRED,
+                               LED_ALL_RED,
+                               LED_ALL_REDBLUE,
+                               LED_ALL_BLUE,
+                               LED_ALL_GREENBLUE,
+                               LED_ALL_WHITE,
+                             };
 
 class Duinotech595
 {
@@ -52,6 +60,7 @@ private:
   byte _latchPin;
   byte _dataPin;
   byte _clockPin;
+
 public:
   void init();
   void updateShiftRegister(byte byteToSet);
@@ -64,6 +73,11 @@ public:
   void greenblue();
   void white();
   void on();
+  void sequenceTest();
+  void blinkOk(unsigned int count = 2, unsigned int onDelay = 500, unsigned int offDelay = 1000);
+  void blinkError(unsigned int count = 2, unsigned int onDelay = 500, unsigned int offDelay = 1000);
+  void flashOk(unsigned int count = 2, unsigned int onDelay = 500);
+  void flashError(unsigned int count = 2, unsigned int onDelay = 500);
 };
 
 

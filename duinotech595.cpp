@@ -63,3 +63,48 @@ void Duinotech595::white() {
 void Duinotech595::on() {
   this->white();
 }
+
+void Duinotech595::sequenceTest() {
+  for (int i = 0; i < sizeof(sequenceArray); i++) {
+    this->updateShiftRegister(sequenceArray[i]);
+    delay(1000);
+    this->off();
+    delay(500);
+  }
+}
+
+void Duinotech595::blinkOk(unsigned int count, unsigned int onDelay, unsigned int offDelay) {
+  for (int i=0; i<count; i++) {
+    this->green();
+    delay(onDelay);
+    this->off();
+    delay(offDelay);
+  }
+}
+
+void Duinotech595::blinkError(unsigned int count, unsigned int onDelay, unsigned int offDelay) {
+  for (int i=0; i<count; i++) {
+    this->red();
+    delay(onDelay);
+    this->off();
+    delay(offDelay);
+  }
+}
+
+void Duinotech595::flashOk(unsigned int count, unsigned int onDelay) {
+  for (int i=0; i<count; i++) {
+    this->updateShiftRegister(LED_PAIR_1_GREEN);
+    delay(onDelay);
+    this->updateShiftRegister(LED_PAIR_2_GREEN);
+    delay(onDelay);
+  }
+}
+
+void Duinotech595::flashError(unsigned int count, unsigned int onDelay) {
+  for (int i=0; i<count; i++) {
+    this->updateShiftRegister(LED_PAIR_1_RED);
+    delay(onDelay);
+    this->updateShiftRegister(LED_PAIR_2_RED);
+    delay(onDelay);
+  }
+}
