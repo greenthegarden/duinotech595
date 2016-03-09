@@ -73,38 +73,27 @@ void Duinotech595::sequenceTest() {
   }
 }
 
-void Duinotech595::blinkOk(unsigned int count, unsigned int onDelay, unsigned int offDelay) {
+void Duinotech595::blink(unsigned int count, unsigned int onDelay, unsigned int offDelay, byte onColour, byte offColour) {
   for (int i=0; i<count; i++) {
-    this->green();
+    this->updateShiftRegister(onColour);
     delay(onDelay);
-    this->off();
+    this->updateShiftRegister(offColour);
     delay(offDelay);
   }
+}
+
+void Duinotech595::blinkOk(unsigned int count, unsigned int onDelay, unsigned int offDelay) {
+  this->blink(count, onDelay, offDelay, LED_ALL_GREEN, LED_ALL_OFF);
 }
 
 void Duinotech595::blinkError(unsigned int count, unsigned int onDelay, unsigned int offDelay) {
-  for (int i=0; i<count; i++) {
-    this->red();
-    delay(onDelay);
-    this->off();
-    delay(offDelay);
-  }
+  this->blink(count, onDelay, offDelay, LED_ALL_RED, LED_ALL_OFF);
 }
 
-void Duinotech595::flashOk(unsigned int count, unsigned int onDelay) {
-  for (int i=0; i<count; i++) {
-    this->updateShiftRegister(LED_PAIR_1_GREEN);
-    delay(onDelay);
-    this->updateShiftRegister(LED_PAIR_2_GREEN);
-    delay(onDelay);
-  }
+void Duinotech595::alternateBlinkOk(unsigned int count, unsigned int onDelay) {
+  this->blink(count, onDelay, onDelay, LED_PAIR_1_GREEN, LED_PAIR_2_GREEN);
 }
 
-void Duinotech595::flashError(unsigned int count, unsigned int onDelay) {
-  for (int i=0; i<count; i++) {
-    this->updateShiftRegister(LED_PAIR_1_RED);
-    delay(onDelay);
-    this->updateShiftRegister(LED_PAIR_2_RED);
-    delay(onDelay);
-  }
+void Duinotech595::alternateBlinkError(unsigned int count, unsigned int onDelay) {
+  this->blink(count, onDelay, onDelay, LED_PAIR_1_RED, LED_PAIR_2_RED);
 }

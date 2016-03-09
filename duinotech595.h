@@ -74,10 +74,11 @@ public:
   void white();
   void on();
   void sequenceTest();
+  void blink(unsigned int count = 2, unsigned int onDelay = 500, unsigned int offDelay = 1000, byte onColour = LED_ALL_WHITE, byte offColour = LED_ALL_OFF);
   void blinkOk(unsigned int count = 2, unsigned int onDelay = 500, unsigned int offDelay = 1000);
   void blinkError(unsigned int count = 2, unsigned int onDelay = 500, unsigned int offDelay = 1000);
-  void flashOk(unsigned int count = 2, unsigned int onDelay = 500);
-  void flashError(unsigned int count = 2, unsigned int onDelay = 500);
+  void alternateBlinkOk(unsigned int count = 2, unsigned int onDelay = 500);
+  void alternateBlinkError(unsigned int count = 2, unsigned int onDelay = 500);
 };
 
 
