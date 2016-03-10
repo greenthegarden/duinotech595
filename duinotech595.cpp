@@ -64,15 +64,6 @@ void Duinotech595::on() {
   this->white();
 }
 
-void Duinotech595::sequenceTest() {
-  for (int i = 0; i < sizeof(sequenceArray); i++) {
-    this->updateShiftRegister(sequenceArray[i]);
-    delay(1000);
-    this->off();
-    delay(500);
-  }
-}
-
 void Duinotech595::blink(unsigned int count, unsigned int onDelay, unsigned int offDelay, byte onColour, byte offColour) {
   for (int i=0; i<count; i++) {
     this->updateShiftRegister(onColour);
@@ -96,4 +87,16 @@ void Duinotech595::alternateBlinkOk(unsigned int count, unsigned int onDelay) {
 
 void Duinotech595::alternateBlinkError(unsigned int count, unsigned int onDelay) {
   this->blink(count, onDelay, onDelay, LED_PAIR_1_RED, LED_PAIR_2_RED);
+}
+
+void Duinotech595::sequenceTest(unsigned int onDelay, unsigned int offDelay) {
+  for (int i = 0; i < sizeof(sequenceArray); i++) {
+    this->blink(1, onDelay, offDelay, sequenceArray[i], LED_ALL_OFF);
+  }
+}
+
+void Duinotech595::sequenceRandom(unsigned int count, unsigned int onDelay, unsigned int offDelay) {
+  for (int i=0; i<count; i++) {
+    this->blink(count, onDelay, offDelay, sequenceArray[random(sizeof(sequenceArray))], LED_ALL_OFF);
+  }
 }
