@@ -13,7 +13,22 @@ const byte LED_PAIR_2_RED   = 0b00100000;
 const byte LED_PAIR_2_BLUE  = 0b01000000;
 ```
 
-The byte codes for the primary colours can then be combined to provide different combinations of colours. Definitions for white (all colours combined) are provided as:
+The byte codes for the primary colours can then be combined to provide different combinations of colours. 
+
+Definitions for two colour combinations are provided as:
+
+```
+const byte LED_PAIR_1_GREENRED  = LED_PAIR_1_GREEN + LED_PAIR_1_RED;
+const byte LED_PAIR_2_GREENRED  = LED_PAIR_2_GREEN + LED_PAIR_2_RED;
+
+const byte LED_PAIR_1_REDBLUE   = LED_PAIR_1_RED   + LED_PAIR_1_BLUE;
+const byte LED_PAIR_2_REDBLUE   = LED_PAIR_2_RED   + LED_PAIR_2_BLUE;
+
+const byte LED_PAIR_1_GREENBLUE = LED_PAIR_1_GREEN + LED_PAIR_1_BLUE;
+const byte LED_PAIR_2_GREENBLUE = LED_PAIR_2_GREEN + LED_PAIR_2_BLUE;
+```
+
+In addition, definitions for white (all colours combined) are provided as:
 
 ```
 const byte LED_PAIR_1_WHITE = LED_PAIR_1_GREEN + LED_PAIR_1_RED + LED_PAIR_1_BLUE;
@@ -23,10 +38,13 @@ const byte LED_PAIR_2_WHITE = LED_PAIR_2_GREEN + LED_PAIR_2_RED + LED_PAIR_2_BLU
 Additional definitions for all LEDs (both pairs) are provided as:
 
 ```
-const byte LED_ALL_GREEN    = LED_PAIR_1_GREEN + LED_PAIR_2_GREEN;
-const byte LED_ALL_RED      = LED_PAIR_1_RED   + LED_PAIR_2_RED;
-const byte LED_ALL_BLUE     = LED_PAIR_1_BLUE  + LED_PAIR_2_BLUE;
-const byte LED_ALL_WHITE    = LED_PAIR_1_WHITE + LED_PAIR_2_WHITE;
+const byte LED_ALL_GREEN     = LED_PAIR_1_GREEN     + LED_PAIR_2_GREEN;
+const byte LED_ALL_RED       = LED_PAIR_1_RED       + LED_PAIR_2_RED;
+const byte LED_ALL_BLUE      = LED_PAIR_1_BLUE      + LED_PAIR_2_BLUE;
+const byte LED_ALL_GREENRED  = LED_PAIR_1_GREENRED  + LED_PAIR_2_GREENRED;
+const byte LED_ALL_REDBLUE   = LED_PAIR_1_REDBLUE   + LED_PAIR_2_REDBLUE;
+const byte LED_ALL_GREENBLUE = LED_PAIR_1_GREENBLUE + LED_PAIR_2_GREENBLUE;
+const byte LED_ALL_WHITE     = LED_PAIR_1_WHITE     + LED_PAIR_2_WHITE;
 ```
 
 The configuration of the pins is defined within the libray as
